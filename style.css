@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: 'Orbitron', sans-serif;
+  background: linear-gradient(-45deg, #0b3d91, #14532d, #5a1a1a, #003f5c);
+  background-size: 1000% 1000%;
+  animation: bgGradientAnimation 20s linear infinite;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+
+.top-year {
+  font-size: 64px;
+  color: #00ffff;
+  font-weight: bold;
+  text-align: center;
+  letter-spacing: 6px;
+  margin-bottom: 30px;
+  text-shadow:
+    0 0 2px #000000,
+    0 0 4px #000000,
+    0 0 6px #000000;
+}
+
+/* Wrapper for date & time boxes */
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 900px;
+}
+
+.box {
+  width: 100%;
+  max-width: 400px;
+  height: 200px;
+  background: rgba(0, 255, 255, 0.1);
+  border-radius: 25px;
+  box-shadow: 0 0 20px #00ffffb0;
+  backdrop-filter: blur(10px);
+  color: #00ffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  user-select: none;
+  padding: 20px;
+  font-size: 64px;
+  letter-spacing: 6px;
+  text-shadow: 0 0 10px #000000;
+}
+
+.date-box {
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow-x: auto;
+}
+
+/* Responsive tablets */
+@media (max-width: 1024px) {
+  .box {
+    height: 180px;
+    font-size: 48px;
+  }
+  .top-year {
+    font-size: 42px;
+  }
+}
+
+/* Responsive mobiles */
+@media (max-width: 768px) {
+  html, body {
+    padding: 20px;
+  }
+
+  .top-year {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+
+  .wrapper {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .box {
+    max-width: 100%;
+    height: 140px;
+    font-size: 32px;
+    letter-spacing: 2px;
+    padding: 15px;
+  }
+
+  .date-box {
+    line-height: 1.4;
+  }
+}
+
+@keyframes bgGradientAnimation {
+  0% { background-position: 0% 50%; }
+  25% { background-position: 50% 50%; }
+  50% { background-position: 100% 50%; }
+  75% { background-position: 50% 50%; }
+  100% { background-position: 0% 50%; }
+}
